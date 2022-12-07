@@ -223,7 +223,7 @@ from employee;
 
 
 --LPAD 
-select LPAD (salary, 10, '*')--salary 칼럼의 값을 10자리 표현 비어있는 공백은 '*'로 왼쪽부터 채움
+select RPAD(SUBSTR(ENO,1,2), 4, '*')--salary 칼럼의 값을 10자리 표현 비어있는 공백은 '*'로 왼쪽부터 채움
 from employee;
 
 --RPAD
@@ -443,57 +443,140 @@ WHERE HIREDATE = TO_DATE('02-22-1981', 'MM-DD-YYYY'); --이런형식이다라고
 SELECT TRUNC(MONTHS_BETWEEN(SYSDATE,  TO_DATE(20001225,'YYYY-MM-DD'))) AS 달의차
 FROM DUAL;
 
+SELECT TO_DATE('2022-12-07' , 'YYYY-MM-DD')
+FROM DUAL;
+
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'YYYY MON DD DY') --MON을 쓰니깐 월이 나옴 
+FROM DUAL;
 
 
+SELECT SYSDATE, TO_CHAR(SYSDATE, 'YYYY MON DD DY HH:MI:SS')
+FROM DUAL;
 
 
+--숫자를 ==> DATE 타입으로 변환
+SELECT TO_DATE ( 12072022, 'MMDDYYYY')
+FROM DUAL;
+
+--TO_NUMBER : 문자형 데이터를 수자형으로 변환
+
+SELECT 10000- 5000
+FROM DUAL;
 
 
+SELECT '10000' - '5000' --자동으로 변환됨 : 문자열 ===> 숫자형으로
+FROM DUAL;
 
+SELECT '10,000'- '5,000'   --TO_NUMBER로 변환이 필요하댜ㅏ 이건 오류뜸
+FROM DUAL;
 
-
-
-
-
-
-
-
-
-
+SELECT TO_NUMBER('10,000', '999,999') - TO_NUMBER('5,001','9,999') AS 숫자변환계산  --뒤에 있는건 그냥 자릿수 알려주는거 9는 의미가 없다 
+FROM DUAL;
 
 
 --5. 일반 함수
 
+--NVL , NVL2 , NULLIF,
+--COALESCE
+
+--NVL 함수 : NULLD을 처리하는 함수
+        --NLV(컬럼명, 값) : 컬럼에 NULL이 존재할때 값으로 대치 
+        -- 총연봉은 = 월급 * 12 + 보너스
+        -- 보너스 컬럼에 null을 연산하면 null
+        
+SELECT ENAME, SALARY 월급, COMMISSION 보너스, 
+    SALARY * 12 + NVL (COMMISSION , 0) AS 총연봉
+    FROM EMPLOYEE;
+    
+    
+--NVL2함수 : NULL을 처리하는 함수
+    --NVL2(컬럼명, NULL이 아닐경우처리 , NULL경우 처리) 
+    
+    
+SELECT ENAME, SALARY 월급, COMMISSION 보너스, 
+                    --커미션이 NULL이 아닐때       NULL일때 
+    NVL2 (COMMISSION, SALARY * 12 + COMMISSION, SALARY * 12) 총연봉
+FROM EMPLOYEE;
+
+
+--NULLIF 함수 : 두인자를 비교해서 동일한 경우 NULL을 반환하고
+    --동일하지 않는 경우 첫번째 표현식을 반환
+    --NULLIF (EXPR1, EXPR2)
+    
+    
+SELECT NULLIF('A', 'A') , NULLIF('A', 'B')
+FROM DUAL;
 
 
 
+-- COALESCE 함수
+    COALESCE (EXPR1, EXPR2, EXPR3...EXPR-N)
+        --EXPR1 NULL 아니면 EXPR1 반환
+        --EXPR1 NULL 이고 EXPR2가 NULL DL 아니면 EXPR2를 반환
+        --EXPR1 NULL 이고 EXPR2가 NULL 이고 EXPR3가 NULL이 아니면 EXPR3를 반환
+        
+SELECT COALESCE ( 'ABC', 'BCD', 'CDE', 'DEF', 'EFG')
+FROM DUAL;
+
+
+SELECT COALESCE ( NULL, NULL, 'CDE', 'DEF', 'EFG')
+FROM DUAL;
+
+
+SELECT COALESCE ( NULL, NULL, NULL, NULL, 'EFG')
+FROM DUAL;
+
+--DECODE  함수 : SWITCH CASE 문과 동일한 함수
+
+/*
+    DECODE ( 표현식, 조건1, 결과1, 
+        조건2, 결과2,
+        조건3, 결과3,
+        ...
+            기본결과N
+
+*/
+
+/*
+DNO 부서번호
+10 ACCOUNTING
+20 RESEARCH
+30 SALES
+40 OPERATIONS
+DEFAULT
 
 
 
+*/
+
+SELECT ENAME, ENO, 
+DECODE (DNO, 10, 'ACCOUNTING', 
+20, 'RESERACH',
+30,'SALES',
+40, 'OPERATIONS',
+'DEFAULT') AS 부서명
+FROM EMPLOYEE;
 
 
+--CASE : IF ~ ELSE IF, ELSE IF 와 비슷한 구문
 
+/*
+    CASE WHEN 조건1 THEN 결과1
+    WHEN 조건2 THEN 결과2
+    WHEN 조건3 THEN 결과3
+    END
+*/
 
+--부서 번호에 대한 부서명 출력 : CASE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+SELECT ENAME, DNO,
+    CASE WHEN DNO= 10 THEN 'ACCOUNTING'
+    WHEN DNO = 20 THEN 'RESERACH'
+    WHEN DNO = 30 THEN 'SALES'
+    WHEN DNO = 40 THEN 'OPERATIONS'
+    ELSE 'DEFAULT' 
+    END 부서명
+FROM EMPLOYEE
 
 
 
