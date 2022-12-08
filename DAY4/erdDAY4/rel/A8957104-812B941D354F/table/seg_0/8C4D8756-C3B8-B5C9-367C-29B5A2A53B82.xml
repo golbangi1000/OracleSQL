@@ -1,0 +1,174 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8C4D8756-C3B8-B5C9-367C-29B5A2A53B82" schemaObject="81568B83-D85B-8D41-0E02-1FA9EA0612D3" name="ORDERS">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>C##HR2</sourceObjSchema>
+<sourceObjName>ORDERS</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="O_SEQ" id="FEC3F466-BAFB-D01D-2D64-6157A5EDA434">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>O_SEQ</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_CODE" id="B19105E2-FA3D-A481-0289-3B29D52F20CD">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>PRODUCT_CODE</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DFE38DFB-941B-0DB0-3891-F919B4533EE3" referredColumn="BB3518DF-AEC8-CA2C-2449-53D339C7A6E3"/>
+</associations>
+</Column>
+<Column name="ID" id="0DACEAE5-5703-C21B-D77D-14F585B350D6">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16 BYTE</dataTypeSize>
+<ownDataTypeParameters>16 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1B899503-4D6B-1B61-A451-31632A9FAE56" referredColumn="27977E96-F474-B62F-C5E7-27BB9440FBFD"/>
+</associations>
+</Column>
+<Column name="PRODUCT_SIZE" id="A7654F08-3F9B-38CA-F15B-724502D42D8D">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>PRODUCT_SIZE</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QUANTITY" id="03DCB122-5145-B839-E8AB-0F1E848A8DFE">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>QUANTITY</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 BYTE</dataTypeSize>
+<ownDataTypeParameters>5 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RESULT" id="ED56095B-BC6C-368B-90B4-4A8FE73795A0">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>RESULT</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INDATE" id="1FB84930-410E-3430-EA80-027C17AA5D74">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>ORDERS</sourceObjSchema>
+<sourceObjName>INDATE</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F833B850-D2B6-6BC9-5E26-EC8D9DD45F3F" name="ORDERS_O_SEQ_PK">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>C##HR2</sourceObjSchema>
+<sourceObjName>ORDERS_O_SEQ_PK</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FEC3F466-BAFB-D01D-2D64-6157A5EDA434"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="241865FA-FFD6-AB33-CE47-B8B009BDD570" schemaObject="81568B83-D85B-8D41-0E02-1FA9EA0612D3" name="ORDERS_O_SEQ_PK">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>C##HR2</sourceObjSchema>
+<sourceObjName>ORDERS_O_SEQ_PK</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FEC3F466-BAFB-D01D-2D64-6157A5EDA434"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26DA2A0E-FF7A-8F47-FF5C-65AA17733234" name="ORDERS_ID_FK">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0DACEAE5-5703-C21B-D77D-14F585B350D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F97A6211-D303-56FB-BA1A-55C2E3CE4241" name="ORDERS_PRODUCT_CODE_FK">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B19105E2-FA3D-A481-0289-3B29D52F20CD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

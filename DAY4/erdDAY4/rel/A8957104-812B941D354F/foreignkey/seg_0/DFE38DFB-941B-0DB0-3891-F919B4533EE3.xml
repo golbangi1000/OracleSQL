@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DFE38DFB-941B-0DB0-3891-F919B4533EE3" containerWithKeyObject="8C4D8756-C3B8-B5C9-367C-29B5A2A53B82" localFKIndex="F97A6211-D303-56FB-BA1A-55C2E3CE4241" name="ORDERS_PRODUCT_CODE_FK">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>C##HR2</sourceObjSchema>
+<sourceObjName>ORDERS_PRODUCT_CODE_FK</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<referredTableLongName>C##HR2.PRODUCTS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>53937FB1-C4BD-00E3-F6BD-601497DF52C8</referredTableID>
+<keyObject>16E106A7-0CC4-E7C8-D680-DDCCE5B0E9B0</keyObject>
+<referredKeyID>16E106A7-0CC4-E7C8-D680-DDCCE5B0E9B0</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>PRODUCT_CODE</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

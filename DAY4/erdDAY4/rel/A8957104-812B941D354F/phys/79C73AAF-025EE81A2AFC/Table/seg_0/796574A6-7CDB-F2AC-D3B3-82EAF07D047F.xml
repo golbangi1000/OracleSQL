@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="TB_ZIPCODE" directorySegmentName="seg_0" id="796574A6-7CDB-F2AC-D3B3-82EAF07D047F">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<schemaObject>81568B83-D85B-8D41-0E02-1FA9EA0612D3</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>3DE9DFD6-3A35-5F9A-5B87-A5D20EC99C19</segment>
+<tableSpace>0024ABC5-2BD1-EEBD-A89C-38BF9BC748AA</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="SIDO" id="01865EAE-49F6-0199-8EA1-FEC16A3E4C11">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DONG" id="C7C67133-2134-5104-931D-2CE1C69DFAB5">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BUNGI" id="CD91180D-9788-FD48-55C4-45068C8C6B74">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ZIPCODE" id="DF9D505F-56CA-9004-5159-6F2C84613929">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GUGUM" id="EDDF6141-CF35-B434-C8DE-2AD8B93D9E93">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="TB_ZIPCODE_ZIPCODE_PK" id="D0AE0041-D7EF-60B9-A6B0-C33CC6678216">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<schemaObject>81568B83-D85B-8D41-0E02-1FA9EA0612D3</schemaObject>
+<segment>09868304-5145-19B2-B8F6-5A5A999D0119</segment>
+<tableSpace>0024ABC5-2BD1-EEBD-A89C-38BF9BC748AA</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TB_ZIPCODE_ZIPCODE_PK" id="04BC2CBD-C675-1158-DA0F-8B75154374C0">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<segment>09868304-5145-19B2-B8F6-5A5A999D0119</segment>
+<tableSpace>0024ABC5-2BD1-EEBD-A89C-38BF9BC748AA</tableSpace>
+<existingIndex>D0AE0041-D7EF-60B9-A6B0-C33CC6678216</existingIndex>
+<indexSegment>09868304-5145-19B2-B8F6-5A5A999D0119</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

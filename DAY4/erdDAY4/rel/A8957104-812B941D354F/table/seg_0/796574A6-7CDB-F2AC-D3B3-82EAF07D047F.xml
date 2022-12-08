@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="796574A6-7CDB-F2AC-D3B3-82EAF07D047F" schemaObject="81568B83-D85B-8D41-0E02-1FA9EA0612D3" name="TB_ZIPCODE">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>C##HR2</sourceObjSchema>
+<sourceObjName>TB_ZIPCODE</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ZIPCODE" id="DF9D505F-56CA-9004-5159-6F2C84613929">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>TB_ZIPCODE</sourceObjSchema>
+<sourceObjName>ZIPCODE</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7 BYTE</dataTypeSize>
+<ownDataTypeParameters>7 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SIDO" id="01865EAE-49F6-0199-8EA1-FEC16A3E4C11">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>TB_ZIPCODE</sourceObjSchema>
+<sourceObjName>SIDO</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GUGUM" id="EDDF6141-CF35-B434-C8DE-2AD8B93D9E93">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>TB_ZIPCODE</sourceObjSchema>
+<sourceObjName>GUGUM</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DONG" id="C7C67133-2134-5104-931D-2CE1C69DFAB5">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>TB_ZIPCODE</sourceObjSchema>
+<sourceObjName>DONG</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BUNGI" id="CD91180D-9788-FD48-55C4-45068C8C6B74">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>TB_ZIPCODE</sourceObjSchema>
+<sourceObjName>BUNGI</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 BYTE</dataTypeSize>
+<ownDataTypeParameters>30 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="04BC2CBD-C675-1158-DA0F-8B75154374C0" name="TB_ZIPCODE_ZIPCODE_PK">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>C##HR2</sourceObjSchema>
+<sourceObjName>TB_ZIPCODE_ZIPCODE_PK</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DF9D505F-56CA-9004-5159-6F2C84613929"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D0AE0041-D7EF-60B9-A6B0-C33CC6678216" schemaObject="81568B83-D85B-8D41-0E02-1FA9EA0612D3" name="TB_ZIPCODE_ZIPCODE_PK">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>C##HR2</sourceObjSchema>
+<sourceObjName>TB_ZIPCODE_ZIPCODE_PK</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:05 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DF9D505F-56CA-9004-5159-6F2C84613929"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

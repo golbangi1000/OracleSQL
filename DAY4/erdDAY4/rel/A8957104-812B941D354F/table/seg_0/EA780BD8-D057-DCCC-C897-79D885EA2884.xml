@@ -1,0 +1,161 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EA780BD8-D057-DCCC-C897-79D885EA2884" schemaObject="81568B83-D85B-8D41-0E02-1FA9EA0612D3" name="MEMBER">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>C##HR2</sourceObjSchema>
+<sourceObjName>MEMBER</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:18 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="27977E96-F474-B62F-C5E7-27BB9440FBFD">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>ID</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:18 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2 BYTE</dataTypeSize>
+<ownDataTypeParameters>2 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PWD" id="EB6C9953-4E4F-12B8-F602-34E72C78DFE4">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>PWD</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:18 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="8678DDA5-177C-8309-022C-6351DA883CA4">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:18 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 BYTE</dataTypeSize>
+<ownDataTypeParameters>50 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ZIPCODE" id="10FB293D-29B9-4509-10C7-07032E39B08B">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>ZIPCODE</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:18 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7 BYTE</dataTypeSize>
+<ownDataTypeParameters>7 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="996EEBE9-2BAD-8D48-CEE7-93AF1C88FD01" referredColumn="DF9D505F-56CA-9004-5159-6F2C84613929"/>
+</associations>
+</Column>
+<Column name="ADDRESS" id="69F71DF8-139B-B91C-60D8-8B5476A755DD">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>ADDRESS</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:18 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TEL" id="ADAC70D3-AF5B-5480-954C-91C08F7C6D4C">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>TEL</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:18 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13 BYTE</dataTypeSize>
+<ownDataTypeParameters>13 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INDATE" id="97A0B52D-18FD-6C27-CD9F-D892F0B7AA5D">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>MEMBER</sourceObjSchema>
+<sourceObjName>INDATE</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:18 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<defaultValue>SYSDATE</defaultValue>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="080A6B59-1469-0395-8178-4951D9901D1E" name="MEMBER_ID_PK">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>C##HR2</sourceObjSchema>
+<sourceObjName>MEMBER_ID_PK</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:18 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="27977E96-F474-B62F-C5E7-27BB9440FBFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7C71272C-8D5A-2FCE-D2A1-69D07B699296" schemaObject="81568B83-D85B-8D41-0E02-1FA9EA0612D3" name="MEMBER_ID_PK">
+<sourceConnName>HR2+%EA%B3%84%EC%A0%95%EC%9C%BC%EB%A1%9C+%EC%A0%91%EC%86%8D</sourceConnName>
+<sourceObjSchema>C##HR2</sourceObjSchema>
+<sourceObjName>MEMBER_ID_PK</sourceObjName>
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:18 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="27977E96-F474-B62F-C5E7-27BB9440FBFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B203ED4A-CC79-D6FC-13B8-BE73F7F573BB" name="MEMBER_ZIPCODE_FK">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:18 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="10FB293D-29B9-4509-10C7-07032E39B08B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="PRODUCTS" directorySegmentName="seg_0" id="53937FB1-C4BD-00E3-F6BD-601497DF52C8">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<schemaObject>81568B83-D85B-8D41-0E02-1FA9EA0612D3</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>3DE9DFD6-3A35-5F9A-5B87-A5D20EC99C19</segment>
+<tableSpace>0024ABC5-2BD1-EEBD-A89C-38BF9BC748AA</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="INDATE" id="3732C578-52C7-CCA6-F0FF-47CC041BCB6F">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_NAME" id="88C92E42-71E0-52F7-E662-C98CE606BC2B">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SIZEST" id="983AA4D9-1B44-9D4E-CD7F-1F530874DCEB">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_QUANTITY" id="9D67A6A1-A660-EDC6-BB0E-143A0809252B">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="USEYN" id="AFAC0117-F123-DC4A-4289-BB2BAD3BDABA">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_PRICE2" id="B79F1199-7E79-8681-C90D-48041A66069A">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_IMAGE" id="B7E6E733-A29A-12E2-7836-810F8AD2F511">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_CODE" id="BB3518DF-AEC8-CA2C-2449-53D339C7A6E3">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_PRICE1" id="C70E9168-F1C3-E5CC-C8A2-362C8617E6A9">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SIZEET" id="CB5FB8C5-D5AC-64C8-1CD8-26485DE966CE">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_KIND" id="F3088509-08F0-20CE-233F-0600462A1599">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_CONTENT" id="F8920399-B17D-2C36-2DC8-384141DCB14A">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PRODUCTS_PRODUCT_CODE_PK" id="16E106A7-0CC4-E7C8-D680-DDCCE5B0E9B0">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<schemaObject>81568B83-D85B-8D41-0E02-1FA9EA0612D3</schemaObject>
+<segment>09868304-5145-19B2-B8F6-5A5A999D0119</segment>
+<tableSpace>0024ABC5-2BD1-EEBD-A89C-38BF9BC748AA</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PRODUCTS_PRODUCT_CODE_PK" id="2656B1AD-49E9-54AE-6911-019DE7A5122D">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:12 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<segment>09868304-5145-19B2-B8F6-5A5A999D0119</segment>
+<tableSpace>0024ABC5-2BD1-EEBD-A89C-38BF9BC748AA</tableSpace>
+<existingIndex>16E106A7-0CC4-E7C8-D680-DDCCE5B0E9B0</existingIndex>
+<indexSegment>09868304-5145-19B2-B8F6-5A5A999D0119</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

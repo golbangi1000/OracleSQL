@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="ORDERS" directorySegmentName="seg_0" id="8C4D8756-C3B8-B5C9-367C-29B5A2A53B82">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<schemaObject>81568B83-D85B-8D41-0E02-1FA9EA0612D3</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>3DE9DFD6-3A35-5F9A-5B87-A5D20EC99C19</segment>
+<tableSpace>0024ABC5-2BD1-EEBD-A89C-38BF9BC748AA</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="QUANTITY" id="03DCB122-5145-B839-E8AB-0F1E848A8DFE">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="0DACEAE5-5703-C21B-D77D-14F585B350D6">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="INDATE" id="1FB84930-410E-3430-EA80-027C17AA5D74">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_SIZE" id="A7654F08-3F9B-38CA-F15B-724502D42D8D">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_CODE" id="B19105E2-FA3D-A481-0289-3B29D52F20CD">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RESULT" id="ED56095B-BC6C-368B-90B4-4A8FE73795A0">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="O_SEQ" id="FEC3F466-BAFB-D01D-2D64-6157A5EDA434">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="ORDERS_O_SEQ_PK" id="241865FA-FFD6-AB33-CE47-B8B009BDD570">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<schemaObject>81568B83-D85B-8D41-0E02-1FA9EA0612D3</schemaObject>
+<segment>09868304-5145-19B2-B8F6-5A5A999D0119</segment>
+<tableSpace>0024ABC5-2BD1-EEBD-A89C-38BF9BC748AA</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ORDERS_ID_FK" id="26DA2A0E-FF7A-8F47-FF5C-65AA17733234">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="ORDERS_PRODUCT_CODE_FK" id="F97A6211-D303-56FB-BA1A-55C2E3CE4241">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="ORDERS_O_SEQ_PK" id="F833B850-D2B6-6BC9-5E26-EC8D9DD45F3F">
+<createdBy>hi</createdBy>
+<createdTime>2022-12-08 09:13:41 UTC</createdTime>
+<ownerDesignName>erdDAY4</ownerDesignName>
+<segment>09868304-5145-19B2-B8F6-5A5A999D0119</segment>
+<tableSpace>0024ABC5-2BD1-EEBD-A89C-38BF9BC748AA</tableSpace>
+<existingIndex>241865FA-FFD6-AB33-CE47-B8B009BDD570</existingIndex>
+<indexSegment>09868304-5145-19B2-B8F6-5A5A999D0119</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>
