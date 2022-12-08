@@ -26,19 +26,31 @@ SELECT SUM(SALARY), AVG(SALARY),MAX(SALARY),MIN(SALARY)
 FROM EMPLOYEE
 WHERE JOB NOT IN ('SALESMAN','PRESIDENT','CLERK')
 GROUP BY DNO;
+
+select sum (salary), round (avg(salary),2), max(salary), min(salary), dno, count(*)
+from employee
+where job not in ('SALESMAN', 'PRESIDENT', 'CLERK')
+group by dno
+order by dno;
+
 --3
 SELECT SUM(SALARY), AVG(SALARY),MAX(SALARY),MIN(SALARY)
 FROM EMPLOYEE
 WHERE DNO = (SELECT DNO FROM EMPLOYEE WHERE ENAME = 'SMITH');
 
+--이렇게 해도 같음 
+SELECT SUM(SALARY), AVG(SALARY),MAX(SALARY),MIN(SALARY)
+FROM EMPLOYEE
+WHERE DNO = (SELECT DNO FROM EMPLOYEE WHERE ENAME = 'SMITH')
+GROUP BY DNO;
 --4
-SELECT MIN(SALARY)
+SELECT MIN(SALARY),DNO, COUNT(*)
 FROM EMPLOYEE
 GROUP BY DNO
 HAVING MIN(SALARY) > 1000;
 
 --5
-SELECT SUM(SALARY)
+SELECT SUM(SALARY),DNO
 FROM EMPLOYEE
 GROUP BY DNO
 HAVING SUM(SALARY) > 9000;
@@ -72,10 +84,12 @@ WHERE SALARY IN (   --이건 =을 못씀 단일값이 아니니깐 IN은 여러�
     SELECT MIN(SALARY) FROM EMPLOYEE
     GROUP BY DNO
     --SUB QUERY: 부서별로 최소 월급을 출력 
+    
 );
 
 
---9
+--9. sub query - 부서별로  부서별 평균 급여보다 많이 받는 사용자의  이름과 급여와 직책과 부서번호를 출력하세요. 
+
 
 SELECT ENAME, SALARY, JOB, DNO
 FROM EMPLOYEE
@@ -85,8 +99,10 @@ SELECT AVG(SALARY) FROM EMPLOYEE
 ORDER BY DNO;
 
 
---10 
-
+--10. sub query - 직급이 SALESMAN이 아니면서 면서 급여가 임의의 SalesMan 보다 작은 사원을 출력
+--            SALESMAN 의 최대 값이 1600 보다 작은 사원들을 출력
+-- 햇갈리게 1600조건은 왜 줌 
+--SALESMAN 최대 SALARY가 1600이라 AND 넣을필요가 없었음 근데 그걸 누가 확인함 
 SELECT ENAME, JOB, SALARY FROM EMPLOYEE
 WHERE SALARY < ANY(SELECT SALARY FROM EMPLOYEE WHERE JOB = 'SALESMAN' AND SALARY < 1600 )
 AND JOB <> 'SALESMAN';
@@ -98,4 +114,9 @@ SELECT ENAME, ENO, SALARY FROM EMPLOYEE
 WHERE SALARY > (
 SELECT AVG(SALARY) FROM EMPLOYEE
 )
-ORDER BY SALARY DESC;
+ORDER BY SALARY ASC;
+
+select eno, ename,salary from employee
+where salary > (select avg(salary) as 평균급여 from employee)
+order by salary asc;
+
