@@ -88,13 +88,19 @@ SELECT * FROM DEPT;
 DESC DEPT;
 
 INSERT INTO DEPT (DNO, DNAME)
+
 VALUES (30, 'ABC');
+
+--명시적으로 NULL 넣기
+INSERT INTO DEPT
+VALUES (40, 'BCD', NULL);
+
 
 COMMIT;
 
 
---회원 정보를 저장하는 테이블 생성
-CREATE TABLE MEMBER (
+--회원 정보를 저장하는 테이블 생성 --이름 지을때 조심하기 
+CREATE TABLE MEMBER1 (
     ID VARCHAR2(50) NOT NULL PRIMARY KEY , 
     PASSWORD VARCHAR2(50) NOT NULL ,
     ADDR VARCHAR2(100)  NOT NULL,
@@ -103,7 +109,10 @@ CREATE TABLE MEMBER (
     WEIGHT NUMBER (5,2) NOT NULL
 );
 
-/* 제약 조건
+/* 제약 조건 : 데이터의 무결성을 확보하기 위해서 테이블의 컬럼에 부여 
+            -무결성: 오류없는 데이터, 원하는 데이터 
+    --NOT NULL
+    --FOREIGN KEY
     -- PRIMARY KEY : 테이블에서하나만 존재 할수있다
             --PRIMARY KEY가 적용된 컬럼은 중복된 값을 넣을 수 없다.
             -- 데이터를 수정 할떄, 삭제시 조건을 사용하는 컬럼. 
@@ -118,8 +127,13 @@ CREATE TABLE MEMBER (
     --CHECK : 값을 넣을떄 체크해서 값을 넣는다
     --NOT NULL : 컬럼에 NULL을 넣을수 없다 
 */
+SELECT * FROM USER_CONSTRAINTS;
 
-DESC MEMBER;
+--원하는 테이블의 제약 조건 확인
+SELECT * FROM USER_CONSTRAINTS
+
+
+
 
 
 INSERT INTO MEMBER(ID, PASSWORD, ADDR, PHONE, AGE, WEIGHT)

@@ -1,0 +1,459 @@
+SHOW USER;
+
+--실스 테이블 복사 < == 원본 테이블에 할당된 제약 조건을 복사 되어 오지 않는다
+    --컬럼명, 자료형, 
+    
+CREATE TABLE DEPT20
+AS 
+SELECT * FROM DEPARTMENT;
+
+DESC DEPT20;
+DESC DEPARTMENT;
+
+--제약 조건 확인
+SELECT * FROM USER_CONSTRAINTS
+WHERE TABLE_NAME = 'DEPARTMENT';
+
+--이건 복사해서 제약조건이 없음 제약조건은 복사가 안됨 
+SELECT * FROM USER_CONSTRAINTS
+WHERE TABLE_NAME = 'DEPT20';
+
+--1. 기존 테이블에 컬럼 추가 : NULL을 허용 컬럼을 추가해야함
+
+--기존 테이블에 BRITH 컬럼을 추가 
+ALTER TABLE DEPT20
+ADD (BIRTH DATE);
+
+
+ALTER TABLE DEPT20
+ADD( EMAIL VARCHAR2(100), ADDRESS VARCHAR2(200), JUMIN VARCHAR2(13));
+
+SELECT * FROM DEPT20;
+
+/*
+    문자열을 저장함.
+    CHAR : 자릿수가 지정된 컬럼은 CHAR, 주민번호, 은행비밀번호 (4자리)
+        --성능이 빠르다, 하드공간을 낭비할수있다
+    
+    VARCHAR2 : 자릿수를 알수없는 경우 , 주소 , EMAIL,
+        --VARCHAR의 성능을 개선해서 만든 ==> VARCHAR2
+        --CHAR 보다 성능이 떨어진다. 하드공간 낭비를 줄일수있다.
+*/                                               
+
+
+--컬럼에 지정된 자료형 수정 
+
+ALTER TABLE DEPT20
+MODIFY EMAIL VARCHAR2(200);
+
+ALTER TABLE DEPT20 
+MODIFY LOC VARCHAR2(50);
+
+--특정컬럼 삭제
+ALTER TABLE DEPT20
+DROP COLUMN JUMIN;
+
+ALTER TABLE DEPT20
+DROP COLUMN ADDRESS;
+
+--컬럼을 삭제시 레코드가 많을경우 시스템에 많은 부하가 발생됨 
+    --업무가 없는 야가나에 작업.
+    --임시적으로 특정컬럼의 사용을 중지후 야간에 작업 
+    --SET UNUSED : CPU 부하업시 특정 컬럼을 사용 중지
+    
+    
+ALTER TABLE DEPT20
+SET UNUSED(EMAIL); --임시적으로 EMAIL컬럼을 사용중지 
+
+ALTER TABLE DEPT20 --UNUSED 된 컬럼을 야간에 삭제 
+DROP UNUSED COLUMNS; 
+
+SELECT * FROM DEPT20;
+
+--테이블 컬럼명 변경
+ALTER TABLE DEPT20
+RENAME COLUMN DNO TO D_NO;
+
+ALTER TABLE DEPT20
+RENAME COLUMN DNAME TO D_NAME;
+
+
+--테이블 이름 변경
+RENAME DEPT20 TO DEPT22;
+
+--현재 로그온 한 사용자 계정의 모든 테이블 출력
+SELECT * FROM TAB;
+
+--현재 로그온 한 사용자 계정의 모든 테이블 출력: 데이터 사전을 사용해서 출력
+--아주 자세한 정보가 출력 
+SELECT * FROM USER_TABLES;
+
+/*
+    데이터 사진 : 관리를 목적으로 객체의 정보를 저장하는 테이블
+    객체(OBJECT): TABLE, VIEW, INDEX, FUNCTION, STORED PROCEDURE, USER....
+    
+    USER_   : 자신이 속한 계정에서 생성한 객체만 출력
+    ALL_    : 자신이 속한 계정에서 생성한 객체와 권한을 부여받은 객체 정보를 출력
+    DBA_    : 데이터베이스 관리자만 접근 가능한 객체 정보, SYS, SYSTEM
+
+    SELECT * FROM USER_TABLES; //테이블의 정보
+    SELECT * FROM USER_CONSTRAINTS; //제약조건 정보 출력 <==컬럼, 
+        //NOT NULL, PRIMARY KEY, UNIQUE, FOREIGN KEY, CHECK,
+        //DEFAULT는 제약조건이 아님
+        
+    SELECT * FROM USER_INDEXES; //인덱스 정보를 출력 : 테이블의 컬럼에 부여됨
+            //인덱스(색인, 목차) : 검색을 빠르게 할때 사용됨
+            
+    SELECT * FROM USER_SEQUENCES; //시퀀스 정보 확인 : 
+            //SEQUENCE: 컬럼에 값이 자동으로 증가 되는 컬럼에 적용되는 객체. 
+*/
+
+
+SELECT * FROM USER_TABLES;
+
+SELECT * FROM USER_TABLES
+WHERE TABLE_NAME = 'DEPARTMENT';
+
+SELECT * FROM DBA_TABLES;
+
+
+--테이블에 컬럼에 할당된 제약 조건 수정 : <<ALTER TABLE>>
+SELECT * FROM USER_CONSTRAINTS;
+
+--실습 할 테이블 복사 // 테이블 복사하면 제약조건은 복사되지 않음
+CREATE TABLE EMP_COPY01
+AS 
+SELECT * FROM EMPLOYEE;
+
+CREATE TABLE DEPT_COPY01
+AS 
+SELECT * FROM DEPARTMENT;
+
+-- EMPLOYEE 테이블의 제약 조건
+SELECT * FROM USER_CONSTRAINTS
+WHERE TABLE_NAME = 'EMPLOYEE';
+
+--EMP_COPY01 테이블의 제약 조건 확인
+SELECT * FROM USER_CONSTRAINTS
+WHERE TABLE_NAME = 'EMP_COPY01';
+
+--두 테이블의 제약 조건 확인 =========== 두 테이블의 제약 조건 확인 
+SELECT * FROM USER_CONSTRAINTS
+WHERE TABLE_NAME IN ('EMPLOYEE', 'EMP_COPY01','DEPARTMENT','DEPT_COPY01');
+
+
+--PRIMARY KEY 할당 (복사한 테이블)
+        --해당 컬럼에는 NULL이 존재하면 안됨
+        -- 중복된 갑싱 존재하면 안됨
+        
+SELECT * FROM EMP_COPY01;
+SELECT * FROM DEPT_COPY01;
+ALTER TABLE EMP_COPY01
+ADD CONSTRAINT EMP_COPY01_ENO_PK PRIMARY KEY(ENO);
+
+--FOREIGN KEY : 부모 테이블의 PRIMARY KEY, UNIQUE를 참조함 .
+    --DEPT_COPY01 테이블의 DNO 컬럼에 PRIMARY KEY
+ALTER TABLE DEPT_COPY01
+ADD CONSTRAINT DEPT_COPY01_DNO_PK PRIMARY KEY (DNO);
+
+--EMP_COPY01 테이블의 DNO컬럼에 FK 할당 ===> DEPT_COPY01 (DNO)
+SELECT * FROM EMP_COPY01;
+SELECT * FROM DEPT_COPY01;
+
+--FK 제약 조건 추가 
+ALTER TABLE EMP_COPY01
+ADD CONSTRAINT EMP_COPY01_DNO_FK FOREIGN KEY (DNO) REFERENCES DEPT_COPY01(DNO);
+
+
+--====
+DESC EMP_COPY01; --ENO를 PRIMARY KEY 만들어서 NOT NULL 컬럼이 됨 
+DESC DEPT_COPY01;
+
+SELECT * FROM EMP_COPY01;
+
+--ENAME 컬럼에 UNIQUE제약 조건 추가 하기
+    --중복된 값을 넣을수 없도록, NULL을 한번만 넣을수 있다 
+    
+ALTER TABLE EMP_COPY01
+ADD CONSTRAINT EMP_COPY01_ENAME_UK UNIQUE (ENAME);
+
+
+
+-- SALARY 컬럼에 CHECK 제약 조건 추가 :  월급은 SALARY > 0
+
+ALTER TABLE EMP_COPY01
+ADD CONSTRAINT EMP_COPY01_SALARY_CK CHECK (SALARY > 0);
+    
+--특정 컬럼에 NOT NULL 제약 조건 추가
+    --NULL이 들어간 컬럼에는 NOT NULL 제약 추가 하면 오류 
+        --기존의 컬럼에 NULL 이 존재하지 않아야함 
+        
+DESC EMP_COPY01;
+
+SELECT JOB FROM EMP_COPY01
+WHERE JOB IS NULL; --NULL이 없는지 확인 
+
+
+-- JOB 컬럼을 NOT NULL 컬럼으로 바꿈 NOT NULL 추가할때는 MODIFY사용
+ALTER TABLE EMP_COPY01
+MODIFY JOB CONSTRAINT EMP_COPY01_JOB_NN NOT NULL;
+
+
+/*
+    제약 조건 제거 : ALTER TABLE 테이블명
+                    DROP <제약조건이름>
+        --FK 가 참조하는 테이블의 제약조건을 제거시 FK를 먼저 제거후 해당 테이블의
+          제약 조건 제거 
+    
+*/
+
+--기존 테이블의 제약 조건 확인
+SELECT * FROM USER_CONSTRAINTS 
+WHERE TABLE_NAME IN ('EMP_COPY01', 'DEPT_COPY01');
+
+
+--ENO 컬럼의 PRIMARY KEY 제약 조건 제거하기,
+    --제약 조건 이름, PRIMARY KEY <==== 테이블에 하나밖에 못오니깐 둘중하나로 부르면됨.
+    
+--EMP_COPY01 테이블의 ENO컬럼에 할당된 PRIMARY KEY 이름으로 제거 
+ALTER TABLE EMP_COPY01
+DROP PRIMARY KEY;
+
+--DEPT_COPY01 DNO컬럼에 할당된 PRIMARY KEY 제거하기 <<== FK가 참조하기때문에 제거가 안됨 
+ALTER TABLE DEPT_COPY01
+DROP CONSTRAINT DEPT_COPY01_DNO_PK;
+
+--FK를 먼저 제거하기   --이걸 먼저 돌려서 FK를 드랍하면 위에거 가능 했으니깐 
+ALTER TABLE DEPT_COPY01
+DROP CONSTRAINT EMP_COPY01_DNO_FK;
+
+
+--<<중요>> : 제약 조건을 제거시 다른 테이블의 FK가 참조하기 때문에 제거가 안됨
+        --FK를 먼저 제거하고, 제거해야함
+        
+ALTER TABLE EMP_COPY01
+DROP CONSTRAINT DEPT_COPY_DNO_FK;
+
+
+--제약 조건을 제거하면서 참조하는 FK까지 강제로 함께제거 : CASCADE 옵션을 사용하면
+        ---   참조하는 제약조건과 함께 제거 가능 
+        
+        
+--PRIMARY KEY 제거
+ALTER TABLE DEPT_COPY01
+DROP PRIMARY KEY;
+--UNIQUE 제약 조건 제거하기
+
+ALTER TABLE EMP_COPY01
+DROP CONSTRAINT EMP_COPY01_ENAME_UK;
+
+
+--CHECK 제약 조건 제거 하기
+
+ALTER TABLE EMP_COPY01
+DROP CONSTRAINT EMP_COPY01_SALARY_CK;
+
+--NOT NULL 제약 조건 제거
+
+ALTER TABLE EMP_COPY01
+DROP CONSTRAINT EMP_COPY01_JOB_NN;
+
+
+CREATE TABLE EMP_COPY02
+AS
+SELECT * FROM EMPLOYEE
+WHERE DNO = 20;
+
+CREATE TABLE DEPT_COPY02
+AS 
+SELECT * FROM DEPARTMENT;
+
+
+--기존의 복사한 테이블에서 제약 조건 추가
+--ENO 컬럼의 PRIMARY KEY 추가 DNO 컬럼에 FK : DEPT_COPY02(DNO)
+ALTER TABLE EMP_COPY02
+ADD CONSTRAINT EMP_COPY02_ENO_PK PRIMARY KEY (ENO);
+
+
+SELECT * FROM EMP_COPY02;
+SELECT * FROM DEPT_COPY02;
+
+--FOREIEGN KEY : DNO : DEPT_COPY02(DNO)
+--FK가 참조할 테이블에 PRIMARY KEY 할당;
+ALTER TABLE DEPT_COPY02
+ADD CONSTRAINT DEPT_COPY02_DNO_PK PRIMARY KEY (DNO);
+
+--FOREIGN KEY 할당;
+ALTER TABLE EMP_COPY02
+ADD CONSTRAINT EMP_COPY02_DNO_FK FOREIGN KEY (DNO) REFERENCES DEPT_COPY02;
+
+
+
+--두테이블 EMP_COPY02 DEPT_COPY02 제약조건 확인
+SELECT * FROM USER_CONSTRAINTS
+WHERE TABLE_NAME IN ('EMP_COPY02', 'DEPT_COPY02');
+
+
+-- FOREIGN KEY 가 참조하는 테이블은 테이블 삭제시 삭제가 안됨
+--자식테이블(참조테이블: FK) 테이블을 먼저 제거후 부모테이블을 삭제
+DROP TABLE EMP_COPY02; -- 이거 먼저 삭제해야됨 
+DROP TABLE DEPT_COPY02;
+
+
+
+--FK가 참조하는 테이블을 강제로 제거 (CASCADE CONSTAINT PURGE)
+ROLLBACK;
+
+DROP TABLE DEPT_COPY02 CASCADE CONSTRAINT PURGE;
+DROP TABLE EMP_COPY02;
+
+
+--제약 조건 DISABLE / ENABLE
+    --BULK INSERT (대량의 데이터를 테이블에 넣음) 할때 테이블의 제약조건이 있으면 
+    -- 값이 지정되는 시간이 오래 걸린다 
+
+-- 실습 테이블 복사후 
+
+CREATE TABLE EMP_COPY03
+AS
+SELECT ENO,ENAME, JOB, SALARY, DNO 
+FROM EMPLOYEE
+WHERE DNO = 30;
+
+
+CREATE TABLE DEPT_COPY03
+AS 
+SELECT * FROM DEPARTMENT;
+
+SELECT * FROM EMP_COPY03;
+SELECT * FROM DEPT_COPY03;
+
+---------------------------------------------------
+-- ENO : PRIMARY KEY <== EMP_COPY03
+ALTER TABLE EMP_COPY03
+ADD CONSTRAINT EMP_COPY03_ENO_PK PRIMARY KEY(ENO);
+
+-- DNO : PRIMARY KEY <== DEPT_COPY03
+ALTER TABLE DEPT_COPY03
+ADD CONSTRAINT DEPT_COPY03_DNO_PK PRIMARY KEY (DNO);
+
+--DNO : FOREIGN KEY <== EMP_COPY03
+ALTER TABLE EMP_COPY03
+ADD CONSTRAINT EMP_COPY03_DNO_FK FOREIGN KEY (DNO) REFERENCES DEPT_COPY03(DNO);
+-----------------------------------------------------------
+--제약 조건 일시 중지 하기  : 제약조건 이름을 사용해서 중지 시킴
+SELECT * FROM USER_CONSTRAINTS
+WHERE TABLE_NAME IN ('EMP_COPY03', 'DEPT_COPY03');
+
+ALTER TABLE EMP_COPY03
+DISABLE CONSTRAINT EMP_COPY03_ENO_PK; --이거 하고 위에 코드로 확인하면 STATUS에 DIABLE돼있는걸 볼수있다
+
+ALTER TABLE EMP_COPY03
+DISABLE CONSTRAINT EMP_COPY03_DNO_FK;
+
+ALTER TABLE DEPT_COPY03
+DISABLE CONSTRAINT DEPT_COPY03_DNO_PK;
+
+
+--제약 조건 재활성화 하기
+
+ALTER TABLE EMP_COPY03
+ENABLE CONSTRAINT EMP_COPY03_ENO_PK;
+
+ALTER TABLE EMP_COPY03
+ENABLE CONSTRAINT EMP_COPY03_DNO_FK;
+
+ALTER TABLE DEPT_COPY03
+ENABLE CONSTRAINT DEPT_COPY03_DNO_PK;
+
+
+--------------------------------------
+/*
+    ALTER TABLE : 생성된 테이블을 수정
+        --컬럼을 추가, 제거, 컬럼의 자료형 수정
+        --제약 조건 추가, 제거, 수정 
+
+*/
+
+
+------ 시퀀스 (SEQUENCE) : 자동번호 발생기 (컬럼의 값을 자동으로 증가시킴)
+        -- 고유한 번호가 할당됨. 
+        -- 시퀀스를 생성, 테이블의 특정 컬럼에 적용. 
+        -- 출력된 시퀀스는 뒤로 되돌아 가지 않는다.
+    
+    
+CREATE SEQUENCE SAMPLE_SEQ
+    INCREMENT BY 10          --증가값 : 10
+        START WITH 10;          -- 초기값 : 10
+        
+
+CREATE SEQUENCE SAMPLE_SEQ1
+    INCREMENT BY 1       --증가값 : 1
+    START WITH 1 ;          -- 초기값 : 11
+
+
+--시퀀스 정보 확인
+SELECT * FROM USER_SEQUENCES;
+
+-- 시퀀스의 다음값 확인 (SAMPLE_SEQ.NEXTVAL)
+SELECT SAMPLE_SEQ.NEXTVAL FROM DUAL;
+--현재 시퀀스가 가지고 있는 값
+SELECT SAMPLE_SEQ.CURRVAL FROM DUAL;   --처음 시퀀스를 실행하면 오류 발생 
+
+--생성한 시퀀스를 테이블의 특정 컬럼에 적용
+CREATE TABLE DEPT30
+AS 
+SELECT * FROM DEPARTMENT
+WHERE 0 = 1;    --WHERE 절이 FALSE가 되면서 테이브르이 레코드를 복사하지 않음 
+
+
+SELECT * FROM DEPT30;
+
+INSERT INTO DEPT30
+VALUES ( SAMPLE_SEQ.NEXTVAL , 'ACC1','SEOUL'); 
+
+
+SELECT * FROM DEPT30;
+
+
+CREATE TABLE DEPT40
+AS 
+SELECT * FROM DEPARTMENT
+WHERE 0 =1;
+
+INSERT INTO DEPT40
+VALUES(SAMPLE_SEQ1.NEXTVAL, 'MANAGER1','BUSAN');
+
+SELECT * FROM DEPT40;
+
+-- 3부터 시작해서 3씩 증가하는 시퀀스를 생성하고 DEPT50 테이블의 DNO컬럼에 할당후 출력
+
+CREATE SEQUENCE SEQ1
+    INCREMENT BY 3
+    START WITH 3;
+    
+CREATE TABLE DEPT50
+AS
+SELECT * FROM DEPARTMENT
+WHERE 0 = 1;
+
+INSERT INTO DEPT50
+VALUES(SEQ1.NEXTVAL,'MANAGER2','SEOUL');
+
+INSERT INTO DEPT50
+VALUES(SEQ1.NEXTVAL,'MANAGER3','SEOUL');
+
+SELECT * FROM DEPT50;
+
+COMMIT;
+
+
+
+
+
+
+
+
+
+
+
