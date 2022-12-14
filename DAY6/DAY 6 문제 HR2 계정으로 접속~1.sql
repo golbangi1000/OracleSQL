@@ -310,10 +310,14 @@ having avg(salary) <= all (select avg(salary)
                           from employee
                           group by job);
 --17
-SELECT ENAME
+SELECT ENAME, DNO
 FROM EMPLOYEE
 WHERE DNO =ANY(SELECT DNO FROM EMPLOYEE WHERE JOB = 'MANAGER');
 
 
-
+    select ename 사원이름, dno 부서번호
+from employee
+where dno in (select dno
+            from employee
+            where job = 'MANAGER');
 
